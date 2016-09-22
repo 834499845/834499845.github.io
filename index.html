@@ -7,12 +7,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maxinum-scalable=1.0, user-scalable=no">
     <meta charset="utf-8">
     <meta name="author" content="王圆圆">
-    <title>王圆圆</title>
+    <title>爱❤王圆圆</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
-
+        <style>
+            html{
+                height: 100%;   
+                background: radial-gradient(circle, #333, #000, #000);  
+            }  
+            body{
+                height: 100%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                perspective: 1500px; 
+            }
+            main  
+            {  
+                width: 300px;  
+                height: 300px;  
+                transform-style: preserve-3d;
+                animation: 10s spin linear infinite;
+            } 
+            main div 
+            {  
+                position: absolute;  
+                width: 100%;  
+                height: 100%; 
+                background-size: 100%;  
+                border: 1px solid black; 
+            }  
+            .font  
+            {  
+                background-image: url(images/001.png);
+                transform: translateZ(150px);  
+            }  
+            .back  
+            {  
+                background-image: url(images/002.png);
+                transform: translateZ(-150px);  
+            }  
+        
+            .left  
+            {  
+                background-image: url(images/003.png);
+                transform: rotateY(90deg) translateZ(-150px);  
+            }  
+            .right  
+            {  
+                background-image: url(images/004.png);
+                transform: rotateY(90deg) translateZ(150px);  
+            }  
+        
+            .top  
+            {  
+                background-image: url(images/005.jpg);
+                transform: rotateX(90deg) translateZ(-150px);  
+            }  
+            .bottom  
+            {  
+                background-image: url(images/006.png);
+                transform: rotateX(90deg) translateZ(150px);  
+            } 
+            
+            @keyframes spin  
+            {  
+                0%  
+                {    
+                    transform: rotateX(0) rotateY(0);  
+                }  
+                100%  
+                {  
+                    transform: rotateX(360deg) rotateY(360deg);  
+                }  
+            } 
+        </style>
 <body>
-    <header>卞童爱王圆圆</header>
+    <header>❤王圆圆好吧</header>
     <div class="ball"></div>
     <div class="ball"></div>
     <div class="ball"></div>
@@ -20,6 +92,14 @@
     <div class="ball"></div>
     <div class="ball"></div>
     <div class="ball"></div>
+    <main>
+        <div class="font"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+         <div class="right"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </main>
 </body>
 <script src="js/index.js"></script>
 

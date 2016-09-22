@@ -1,3 +1,36 @@
+
+function Flake() {
+    var f = document.createElement('img');
+    var h = document.documentElement.clientHeight;
+    var w = document.documentElement.clientWidth;
+    var top = h * Math.random();
+    var left = w * Math.random();
+
+    f.src = 'flake.png';
+    f.style.position = 'absolute';
+    f.style.top = top + 'px';
+    f.style.left = left + 'px';
+    f.style.transform = 'scale(' + Math.random() / 2 + ')';
+
+    document.body.appendChild(f);
+
+    function down() {
+        top += Math.random() * 10;
+        left += Math.random() * 5;
+
+        if (top > h) top = -100;
+        if (left > w) left = -100;
+
+        f.style.top = top + 'px';
+        f.style.left = left + 'px';
+    }
+
+    setInterval(down, 50);
+}
+
+for (var i = 0; i < 50; i++) {
+    new Flake();
+}
 // 选择页面中的所有的球
 var divs = document.querySelectorAll('.ball')
 // 获取屏幕的宽高
