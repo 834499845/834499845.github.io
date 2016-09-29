@@ -1,90 +1,106 @@
-<!DOCTYPE html>
-<html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="shortcut icon" href="1.png" />
-    <link rel="bookmark" href="1.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maxinum-scalable=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <meta name="author" content="王圆圆">
-    <title>爱❤王圆圆</title>
-    <link rel="stylesheet" href="css/index.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>王园园</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
 </head>
-        <style>
-            html{
-                height: 100%;   
-                background: radial-gradient(circle, #333, #000, #000);  
-            }  
-            body{
-                height: 100%;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                perspective: 1500px; 
-            }
-            main  
-            {  
-                width: 300px;  
-                height: 300px;  
-                transform-style: preserve-3d;
-                animation: 10s spin linear infinite;
-            } 
-            main div 
-            {  
-                position: absolute;  
-                width: 100%;  
-                height: 100%; 
-                background-size: 100%;  
-                border: 1px solid black; 
-            }  
-            .font  
-            {  
-                background-image: url(images/001.png);
-                transform: translateZ(150px);  
-            }  
-            .back  
-            {  
-                background-image: url(images/002.png);
-                transform: translateZ(-150px);  
-            }  
-        
-            .left  
-            {  
-                background-image: url(images/003.png);
-                transform: rotateY(90deg) translateZ(-150px);  
-            }  
-            .right  
-            {  
-                background-image: url(images/004.png);
-                transform: rotateY(90deg) translateZ(150px);  
-            }  
-        
-            .top  
-            {  
-                background-image: url(images/005.jpg);
-                transform: rotateX(90deg) translateZ(-150px);  
-            }  
-            .bottom  
-            {  
-                background-image: url(images/006.png);
-                transform: rotateX(90deg) translateZ(150px);  
-            } 
-            
-            @keyframes spin  
-            {  
-                0%  
-                {    
-                    transform: rotateX(0) rotateY(0);  
-                }  
-                100%  
-                {  
-                    transform: rotateX(360deg) rotateY(360deg);  
-                }  
-            } 
-        </style>
+
 <body>
-    <header>❤王圆圆好吧</header>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2016—04-08,</span><br />
+			<span class="space"/><span class="comments">*2016-04-08.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Girl name = <span class="keyword" id="wangyuanyuan"></span> 王媛媛<br />
+			Boy name = <span class="keyword" id="wangyuanyuan"></span>   卞童<br />
+			<span class="comments">// Fall in love river. </span><br />
+			The boy love the girl;<br />
+			<span class="comments">// They love each other.</span><br />
+			The girl loved the boy;<br />
+			<span class="comments">// AS time goes on.</span><br />
+			The boy can not be separated the girl;<br />
+			<span class="comments">// At the same time.</span><br />
+			The girl can not be separated the boy;<br />
+			<span class="comments">// Both wind and snow all over the sky.</span><br />
+			<span class="comments">// Go for a long time.</span><br />
+			<span class="keyword">The boy</span> very <span class="keyword">happy</span>;<br />
+			<span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br />
+			<span class="placeholder"/><span class="comments">// Whether it is right now</span><br />
+			<span class="placeholder"/><span class="comments">// Still in the distant future.</span><br />
+			<span class="placeholder"/>The boy has but one dream;<br />
+			<span class="comments">// The boy wants the girl could well have been happy.</span><br />
+			<br>
+			<br>
+			I want to say:<br />
+			Baby, I love you forever;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					王园园，我爱你！
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 卞童</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2016, 9, 25);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+</div>
     <div class="ball"></div>
     <div class="ball"></div>
     <div class="ball"></div>
@@ -92,15 +108,6 @@
     <div class="ball"></div>
     <div class="ball"></div>
     <div class="ball"></div>
-    <main>
-        <div class="font"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-         <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-    </main>
 </body>
 <script src="js/index.js"></script>
-
 </html>
