@@ -70,7 +70,7 @@ $(function () {
     var index = 2;
     var countPrevs = 0;
     var countNexts = 1;
-    timer = setInterval(toggleDisplay, 500);
+    timer = setInterval(toggleDisplay, 350);
     function toggleDisplay() {
         var arr1TempEl0 = elementPrevs[0].one[arrCount];
         var arr1TempEl1 = elementPrevs[1].two[arrCount];
@@ -106,8 +106,8 @@ $(function () {
                 $(classStr).css('background-image', imageStr);
             }, 500);
             setTimeout(function () {
-                timer = setInterval(toggleDisplay, 500);
-            }, 2000);
+                timer = setInterval(toggleDisplay, 350);
+            }, 7000);
         };
     };
     $('.one').width(boxWidth).height(boxWidth);
