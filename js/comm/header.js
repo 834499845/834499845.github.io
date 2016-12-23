@@ -70,7 +70,7 @@ $(function () {
     var index = 2;
     var countPrevs = 0;
     var countNexts = 1;
-    timer = setInterval(toggleDisplay, 350);
+    timer = setInterval(toggleDisplay, 500);
     function toggleDisplay() {
         var arr1TempEl0 = elementPrevs[0].one[arrCount];
         var arr1TempEl1 = elementPrevs[1].two[arrCount];
@@ -106,10 +106,66 @@ $(function () {
                 $(classStr).css('background-image', imageStr);
             }, 500);
             setTimeout(function () {
-                timer = setInterval(toggleDisplay, 350);
-            }, 7000);
+                timer = setInterval(toggleDisplay, 500);
+            }, 2000);
         };
     };
     $('.one').width(boxWidth).height(boxWidth);
     $('.two').width(boxWidth).height(boxWidth);
+
+    // 从头开始
+    // var count = 0;
+    // var elementPrevs = twos;
+    // var elementNexts = ones;
+    // function statrDisplay() {
+    //     var tempPrev = elementPrevs[count];
+    //     var opacityPrev = tempPrev.css('opacity');
+
+    //     var tempNext = elementNexts[count];
+    //     tempNext.css('opacity', 0);
+    //     var opacityNext = tempNext.css('opacity');
+
+    //     var x = tempPrev.css('background-position-x');
+    //     x = x.split('p')[0] * 1;
+    //     var y = tempPrev.css('background-position-y');
+    //     y = y.split('p')[0] * 1;
+
+    //     if (opacityPrev == 1) {
+    //         $(tempPrev).animate({
+    //             // 'background-position-y': y - boxWidth + 'px',
+    //             opacity: "0",
+    //         });
+    //     };
+    //     if (opacityNext == 0) {
+    //         $(tempNext).animate({
+    //             // 'background-position-y': y - boxWidth + 'px',
+    //             opacity: "1",
+    //         });
+    //     };
+    //     count++;
+    //     var array = [ones, twos];
+    //     if (count > 29) {
+    //         count = 0;
+    //         clearInterval(timer);
+    //         elementPrevs = [];
+    //         elementNexts = [];
+    //         countPrevs--;
+    //         countNexts--;
+    //         if (countPrevs < 0) { countPrevs = 1; };
+    //         if (countNexts < 0) { countNexts = 1; };
+    //         elementNexts = array[countNexts];
+    //         elementPrevs = array[countPrevs];
+    //         index++;
+    //         var classStr = '.' + elementNexts[0].attr('class');
+    //         var imageStr = "url('images/header/" + index + ".jpeg')";
+    //         if (index == 5) { index = 0; };
+    //         setTimeout(function () {
+    //             $(classStr).css('background-image', imageStr);
+    //         }, 300);
+    //         setTimeout(function () {
+    //             timer = setInterval(statrDisplay, 100);
+    //         }, 2000);
+    //     };
+    // };
+
 })

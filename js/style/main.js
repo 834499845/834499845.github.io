@@ -1,4 +1,5 @@
 $(function () {
+    
     $('.nav').on('click', 'li', function () {
         $(this).find('a').css({
             color: "#e76f61",
@@ -9,5 +10,5 @@ $(function () {
             "font-size": "1.2rem"
         });
     });
-
 })
+
